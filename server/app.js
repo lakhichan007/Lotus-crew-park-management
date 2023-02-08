@@ -49,32 +49,38 @@ app.post("/login",async(req,res)=>{
 app.post("/addEmpoyee",async(req,res)=>{
     const {addNewuser1,currentUser}=req.body
     try{
+        console.log(addNewuser1)
         await UserDetails.create({
             name:addNewuser1.name,
             email:addNewuser1.email,
-            phone:addNewuser1.phone,
+            phone:addNewuser1.number,
             password:addNewuser1.password,
-            status:"Inactive",
+            status:"Pending",
             userId:currentUser
         })
-        res.json({message:"user added sucessfully"})
+        res.json({message:"New Employee added"})
     }
     catch(err){
         res.json({message:err.message})
     }
 })
-//-----------------------------
+
+//----------------------------------------
 app.post("/getEmployee",async(req,res)=>{
    
      let  {currentUser} = req.body
     try{
-        console.log(currentUser)
-        let details= UserDetails.find({id:currentUser})
-        console.log(details)
-        res.json({
-        
-        })
-
+      const MyEmployee=  await UserDetails.find({userId:currentUser})
+      res.json({MyEmployee})
+    }
+    catch(err){
+        res.json({message:err.message})
+    }
+})
+app.post("/update",async(req,res)=>{
+    const {id,status}=req.body
+    try{
+        await UserDetails.updateOne({_id:id},{$set:{status}})
     }
     catch(err){
         res.json({message:err.message})

@@ -16,6 +16,9 @@ const navigator=useNavigate()
     const visitToSignUp=()=>{
         navigator("/signUp")
     }
+    const handleStaffLogin=()=>{
+        navigator("/staff")
+    }
     const submitLogIn=()=>{
         if(login.userId && login.password){
             axios.post("http://localhost:5401/login",login)
@@ -41,8 +44,9 @@ const navigator=useNavigate()
     return (
         <>
             <div id="login-main-container">
+            
                 <div>
-                    <h2 id="app-heading">Welcome to My app</h2><br />
+                    <h2 id="app-heading">Welcome Admin</h2><br />
                     <p id="app-title">Please fill the Details Below for Login!</p>
                 </div>
                 <div>
@@ -60,6 +64,7 @@ const navigator=useNavigate()
                     <p style={{color:'red'}}>Don't have Account?</p>
                     <button onClick={visitToSignUp} id="signup-btn">SignUp Here!</button>
                 </div>
+                <button onClick={handleStaffLogin} id="staff-loin">Staff Login</button>
             </div>
         </>
     )

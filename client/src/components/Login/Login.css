@@ -10,7 +10,7 @@
     border-radius: 8px;
     background-color: rgb(101, 4, 78);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 20px 40px;
+    padding: 10px 40px;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -36,5 +36,17 @@
     background-color: transparent;
     color: green;
     font-weight: bolder;
+    cursor: pointer;
+}
+#staff-loin{
+    margin: 0;
+    padding: 4px;
+    background-color: yellowgreen;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    position: relative;
+    left: 10vw;
+    bottom:25vw;
     cursor: pointer;
 }

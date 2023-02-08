@@ -1,23 +1,30 @@
 import "./sidebar.css"
 import axios from "axios"
-const Sidebar=({setAddEmployee,setViewEmployee,setCreteRoutine})=>{
-
+import { useNavigate } from "react-router-dom"
+const Sidebar=({setAddEmployee,setViewEmployee,setCreteRoutine,setAllempoyee})=>{
+const navigator=useNavigate()
     const addEmployee=()=>{
         setAddEmployee(true)
     }
 
     const viewEmployee=()=>{
-        const currentUser=window.localStorage.getItem("id")
+        const currentUser=window.localStorage.getItem("user")
         // console.log(currentUser)
         setViewEmployee(true)
         axios.post("http://localhost:5401/getEmployee",{currentUser})
         .then((res)=>{
-            // console.log(res.data.message)
+            const Empoyee=res.data.MyEmployee
+            // console.log(Empoyee)
+            setAllempoyee(Empoyee)
         })
         .catch(err=>{
             console.log(err)
         })
 
+    }
+    const logoutUser=()=>{
+        window.localStorage.clear()
+        navigator("/")
     }
     const createRoutine=()=>{
         setCreteRoutine(true)
@@ -30,7 +37,7 @@ const Sidebar=({setAddEmployee,setViewEmployee,setCreteRoutine})=>{
                 <button className="dash-brd-btn" onClick={addEmployee}>Add Empolyee</button>
                 <button className="dash-brd-btn" onClick={viewEmployee}> View Employee</button>
                 <button className="dash-brd-btn" onClick={createRoutine}>Create-Routine</button>
-                <button className="dash-brd-btn" id="logout-btn">Logout</button>
+                <button className="dash-brd-btn" id="logout-btn" onClick={logoutUser}>Logout</button>
         </div>
         </>
     )

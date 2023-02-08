@@ -29,10 +29,9 @@
 }
 
 #view-empoyee-box{
-    margin: 50px auto;
+    margin: 50px 10px;
     height: 300px;
-    width:400px;
-    background-color: rgb(50, 189, 204);
+
 }
 #create-routine{
     margin: 50px auto;
@@ -54,4 +53,24 @@
 .sedule{
     height: 36px;
     border-radius: 4px;
+}
+.all-employee-static{
+    height: 36px;
+    width:90%;
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bolder;
+    margin-bottom: 2px;
+}
+.all-employee-dynamic{
+    height: 36px;
+    width:90%;
+    background-color: rgb(195, 213, 246);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1px;
 }
