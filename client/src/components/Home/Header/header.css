@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#main-container{
+    height: 100px;
+    width: 85vw;
+    background-color: rgb(42, 3, 80);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 0px 100px;
+    display: flex;
+    align-items: center;
+    gap:400px
+}

@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+#login-main-container{
+    height: 450px;
+    width: 400px;
+    margin: 100px auto;
+    border-radius: 8px;
+    background-color: rgb(101, 4, 78);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px 40px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+}
+#app-heading{
+    color: white;
+}
+#app-title{
+    color: white;
+}
+.input_box{
+    width: 300px;
+    height: 36px;
+    border-radius: 4px;
+}
+.input_box:hover{
+    background-color: green;
+}
+#signup-btn{
+    border: none;
+    background-color: transparent;
+    color: green;
+    font-weight: bolder;
+    cursor: pointer;
+}
