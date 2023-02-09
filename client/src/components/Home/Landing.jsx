@@ -9,10 +9,12 @@ const Landing=()=>{
     const [addEmployee,setAddEmployee]=useState(false)
     const [viewEmployee ,setViewEmployee]=useState(false)
     const [ creteRoutine ,setCreteRoutine] =useState(false)
+    const [viewstatus,setViewStatus]=useState(false)
     const [allEmpoye,setAllempoyee]=useState([])
+    const [employeeStatus,setempoyeeStatus]=useState([])
     const currentUser = window.localStorage.getItem("user")
     const navigator=useNavigate()
-    // console.log(allEmpoye)
+    // console.log(employeeStatus)
     useEffect(() => {
         if (!currentUser) {
             navigator("/")
@@ -26,6 +28,8 @@ const Landing=()=>{
                             setViewEmployee={setViewEmployee}
                             setCreteRoutine={setCreteRoutine}
                             setAllempoyee={setAllempoyee}
+                            setempoyeeStatus={setempoyeeStatus}
+                            setViewStatus={setViewStatus}
                 />
             </div>
             <div>
@@ -36,6 +40,10 @@ const Landing=()=>{
                             setAddEmployee={setAddEmployee}
                             setCreteRoutine={setCreteRoutine}
                             allEmpoye={allEmpoye}
+                            setViewEmployee={setViewEmployee}
+                            employeeStatus={employeeStatus}
+                            viewstatus={viewstatus}
+                            setViewStatus={setViewStatus}
 
                 />
             </div>

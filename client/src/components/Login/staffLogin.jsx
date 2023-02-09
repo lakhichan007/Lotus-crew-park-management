@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios  from "axios"
 const stafflog={
-    mobile:"",
+    email:"",
     password:""
 }
 const StaffLogin=()=>{
@@ -13,8 +13,21 @@ const StaffLogin=()=>{
         setstaff({...staff,[e.target.name]:e.target.value})
     }
     const staffSubmit=()=>{
-        // console.log(staff)
-        navigator("/")
+        
+        axios.post("http://localhost:5401/Stafflogin",staff)
+        .then((res)=>{
+            if(res.data.message==="sucess"){
+                window.localStorage.setItem("email",res.data.email)
+                navigator("/staffHome")
+            }
+            else{
+                alert(res.data.message)
+            }
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+        
 
     }
 
@@ -26,7 +39,7 @@ return(
                 <p id="app-title">Please fill the Details Below for Login!</p>
             </div>
             <div>
-                <input className="input_box" type="text" placeholder="Enter mobile No." name="mobile"
+                <input className="input_box" type="email" placeholder="Enter email" name="email"
                 onChange={(e)=>handleStaffLogin(e)} />
             </div>
             <div>

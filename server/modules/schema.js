@@ -21,7 +21,20 @@ const userDetailsSchema= new mongoose.Schema({
     status:{type:String},
     userId:{type:String}
 })
+const staffDetailsSchema= new mongoose.Schema({
+    name:{type:String},
+    email:{type:String},
+    work1:{type:String},
+    work2:{type:String},
+    work3:{type:String},
+    time1:{type:String},
+    time2:{type:String},
+    time3:{type:String},
+    day:{type:String},
+    attendance:{type:String}
 
+})
 const AdminUser=mongoose.model("AdminUserDB",AdminSchema)
 const UserDetails= mongoose.model("UserDetailsDB",userDetailsSchema)
-module.exports={AdminUser,UserDetails}
+const staffDetails= mongoose.model("stafDetail",staffDetailsSchema)
+module.exports={AdminUser,UserDetails,staffDetails}
